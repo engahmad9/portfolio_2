@@ -1,0 +1,764 @@
+*
+{
+  box-sizing: border-box;                /**container هاي لل **/
+}
+body
+{
+    padding: 0px;
+    margin: 0px;
+    background-color: #000;
+    font-family: lato, sans-serif;      /** نوع الخط**/
+}
+.container     
+{
+    width: 1200px;           
+    margin: 0 auto;
+}
+.row      
+{ 
+    display: flex;         /**عشان الكلام ياجي جنب بعض**/
+}
+.first
+{
+    background-color: black;        /**الخلفيه كلها اسود **/
+    margin-bottom: 400px;             /**footer طبعا هاد الطول الخاص بfooter**/
+}
+/**start Navbar**/
+nav
+{
+    z-index: 2;
+    position: relative;
+    height: 0;                    /**هاد ع شان ياجي الناف تحت صورة الهيدر ع طول **/
+}
+nav .contain
+{
+    padding: 30px;
+}
+nav .list-2,
+nav .list-1
+{
+    flex: 40%;
+    max-width: 40%;
+}
+nav .list-1
+{
+    text-align: right;
+   
+}
+nav .list-2
+{
+    text-align: left;
+    
+}
+nav .logo
+{
+    flex: 20%;
+    max-width: 20%;
+    color: #fff;
+    text-align: center;
+}
+nav .logo h2
+{
+    text-transform: capitalize;
+    margin: -5px;                  /**عشان يكون ع مستوى الكلام **/
+}
+nav ul
+{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+nav ul li
+{
+    display: inline-block;
+}
+nav ul li a
+{
+    text-decoration: none;                   /**عشان اشيل الخط الي تحت الكلام**/
+    color: #fff;
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 17px;
+    text-transform: capitalize;
+    position: relative;
+}
+nav  li a span:first-child::before        /**هاد الكود عشان لما احط المؤشر ع الكلمة في الناف يصير مربع عليها  **/ /**كل تأتير لازم احط قبل وبعد **/
+{
+    content: '';  
+    position:   absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    transition: .2s;
+    border-top: 2px solid #D63447;
+    border-left: 2px solid #D63447;
+    opacity: 0;                           /**هاي عشان التاتير يختفي لاني بدي اياه يظهر بهد ما تحط المؤشر عليه **/
+    /**هاد الكود لاول زاويه فوق عالشمال **/
+}
+nav  li a span:first-child::after        /**هاد الكود عشان لما احط المؤشر ع الكلمة في الناف يصير مربع عليها  **/ /**كل تأتير لازم احط قبل وبعد **/
+{
+    content: '';  
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    transition: .2s;
+    border-top: 2px solid #D63447;
+    border-right: 2px solid #D63447;
+    opacity: 0;
+    /**لاول زاويه فوق عالايمين **/
+}
+nav  li a span:last-child::before        /**هاد الكود عشان لما احط المؤشر ع الكلمة في الناف يصير مربع عليها  **/ /**كل تأتير لازم احط قبل وبعد **/
+{
+    content: '';  
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    transition: .2s;
+    border-bottom: 2px solid #D63447;
+    border-left: 2px solid #D63447;
+    opacity: 0;
+    /**لاول زاويه تحت عالشمال **/
+}
+nav  li a span:last-child::after        /**هاد الكود عشان لما احط المؤشر ع الكلمة في الناف يصير مربع عليها  **/ /**كل تأتير لازم احط قبل وبعد **/
+{
+    content: '';  
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    transition: .2s;
+    border-bottom: 2px solid #D63447;
+    border-right: 2px solid #D63447;
+    opacity: 0;
+    /**لاول زاويه تحت عاليمين **/
+}
+nav  li a:hover span:first-child::before 
+{
+    top: -10px;
+    left: -10px;
+    opacity: 1;
+}
+nav  li a:hover span:first-child::after
+{
+    top: -10px;
+    right: -10px;
+    opacity: 1;
+}
+nav  li a:hover span:last-child::before 
+{
+    bottom: -10px;
+    left: -10px;
+    opacity: 1;
+}
+nav  li a:hover span:last-child::after
+{
+    bottom: -10px;
+    right: -10px;
+    opacity: 1;
+}
+
+/**end Navbar**/
+
+/**start header**/
+.header
+{
+    height: 650px;
+    position: relative;
+    background-image: url(../images/header.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.header .info        /**هاد عشان الكلام يكون بنص الهيدر**/
+{
+    position: absolute;
+    text-transform: capitalize;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%,-50%);   /**عشان الكلام ياجي بالنص بالزبط **/
+}
+.header .info h2
+{
+    font-size: 90px;
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 0px;
+}
+.header .info p
+{
+     font-size: 40px;
+     margin-top: 10px;
+      color: #fff;
+     line-height: 1.5;  /**المنسافه بين السطور **/
+}
+
+/**end header**/
+/**start Portfolio**/
+.Portfolio .box
+{
+    flex: 33.3333%;
+    max-width: 33.3333%;
+    padding-left:  15px;
+    padding-right: 15px;
+    height: auto;
+    border-bottom: .5px solid #222;
+}
+.Portfolio .box:not(:nth-of-type(2))
+{
+    border-left: .5px solid #222;
+    border-right: .5px solid #222;
+}
+.Portfolio .box .title h3
+{
+    font-size: 30px;
+    text-transform: capitalize;
+    color: #fff;
+}
+.Portfolio .box img
+{
+    width:  100%;
+    margin: 15px 0 ;
+}
+.Portfolio .box:not(:first-of-type)
+{
+    padding-top: 94px;
+}
+
+.Portfolio .overlay
+{
+    opacity: 0;
+    transition: .3s ;
+}
+.Portfolio .images-over:hover .overlay
+{
+    opacity: 1;
+}
+
+
+/**end Portfolio**/
+
+/**start Brands**/
+.brands .box
+{
+    flex: 20%;
+    max-width: 20%;
+    padding: 60px 15px 30px ;
+    height: auto;
+}
+.brands .box:nth-child(odd)
+{
+    border-left: .5px solid #222;
+    border-right: .5px solid #222;
+}
+.brands .box img
+{
+    width:  100%;
+    margin: 15px 0 ;
+}
+
+/**end Brands**/
+/**start about me**/
+.about
+{
+    margin-top: 132px;
+}
+.about .image
+{
+    flex: 66.6666%;
+    max-width: 66.6666%;
+    padding: 0px 15px ;
+    border-left: .5px solid #222;
+    position: relative;
+}
+.about .image::after       /**هاد الكود للصورة الشبك الي تحت صورة الزلمه في الاباوت**/
+{
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    z-index: -1;        /**عشان تاجي تحتيها الصورة **/
+    right: 61px;
+    width: 250px;
+    height: 250px;
+    background-image: url(../images/dotted_light.png);
+}
+.about .info
+{
+    flex: 33.3333%;
+    max-width: 33.3333%;
+    border-left: .5px solid #222;
+    border-right: .5px solid #222;
+    color: #fff;
+}
+.about .image img
+{
+    width: 85%;    /**حجم الصورة **/ 
+}
+.about .info h3
+{
+    font-size: 28px;
+    padding: 0 10px;
+    font-weight: 800;
+    
+}
+.about .info p
+{
+    padding: 0 10px;
+    line-height: 1.7;     /**المسافة بين الخطوط **/
+    color: #ddd; 
+    padding-right: 80px;  
+}
+.about .info button
+{
+    background: none;
+    color: #FFF;
+    border: 1px solid #222;
+    border-radius: 50px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+    margin: 0 12px;
+}
+.about .info button:hover
+{
+    transform: scale(1.05);     /** 1pxعشان لما احط المؤشر ع الزر يطلع لفوق بمقدار **/
+    color: #D63447;
+    border: 1px solid #D63447;    
+}
+
+/**end about me**/
+
+/**start services**/
+.services
+{
+    margin-top: 130px;
+}
+.services .box
+{
+    flex: 33.3333%;
+    max-width: 33.3333%;
+    padding: 0 20px 0 40px;
+}
+.services .box .info
+{
+    margin-bottom: 50px;
+}
+.services .box:not(:nth-of-type(2))
+{
+    border-left: .5px solid #222;
+    border-right: .5px solid #222;  
+}
+.services .box img
+{
+    width: 45px;
+    height: 45px; 
+}
+.services .box h5
+{
+    color: #fff;
+    font-size: 25px;
+    margin: 10px 0;
+}
+.services .box p
+{
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.6;
+    padding-right: 37px; 
+}
+
+
+/**end services**/
+/**start skills**/
+
+.skills
+{
+    margin-top: 130px;
+}
+.skills .box 
+{
+    flex: 25%;
+    max-width: 25%;
+    text-align: center;
+    padding: 0 15px;
+    margin-top: 15px ;
+    border-left: .5px solid #222;
+    border-right: .5px solid #222;
+}
+.skills .box .main-span
+{
+     font-size: 70px;
+     font-weight: 600;
+
+}
+.skills .box .sup
+{
+    color: #fff;
+    position: relative;        /**عشان اقدر اتحكم بموقعها **/
+    top: -30px;
+    font-size: 30px;
+}
+.skills .box p
+{
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0;
+    margin-left: -18px;
+    text-transform: uppercase;
+}
+
+/**end skills**/
+
+/**start testimonials**/
+
+.testimonials
+{
+     margin-top: 130px;
+}
+.testimonials .box
+{
+    background-color: #212121;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 30px 0px -20px #D63447;     /**هاد الكود للخط الي تحت الصندوق الصفر لاني بديش عاليمين والشمال وال 30 عشان يعمل من تحت  والصفر عشان ما يعمل انتشار والسالب 20 عشان ينقص شوي من اليمين والشمال شوي واخر اشي عشان اللون **/
+  
+}
+.testimonials .box span
+{
+    font-size: 95px;
+    text-align: center;
+    color: #fff;
+}
+.testimonials .box p
+{
+    color: #ccc;
+    line-height: 1.9;
+    font-size: 17px;
+}
+.testimonials .info
+{
+    text-align: center;
+    position: relative;     /**عشان اتحكم في موقعه فوق وتحت ويمن وشمال **/
+    top: -45px;
+}
+.testimonials .info img
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+.testimonials .info h5
+{
+       color: #ccc;
+       margin: 15px 0 6px;
+       font-size: 18px;
+       text-transform: capitalize;
+}
+.testimonials .info span
+{
+    color: #555;
+    text-transform: capitalize;
+    font-size: 13px;
+}
+.testimonials .pagination
+{
+      text-align: center;
+}
+.testimonials .pagination span
+{
+    width: 8px;
+    height: 8px;
+    background-color: #555;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+.testimonials .pagination span.active,  /**هاي عشان اسبت لون بوحده فقط والباقي لما احط المؤشر بتف=غير الون **/
+.testimonials .pagination span:hover
+{
+    background-color: #999;
+}
+
+.testimonials .arrows
+{
+    color: #555;
+    position: relative;
+}
+.testimonials .arrows i
+{
+    position: absolute;
+    color: #fff;
+    font-size: 23px;
+    top: -20px;
+    cursor: pointer;
+}
+.testimonials .fa-chevron-left
+{
+     left: 0;
+}
+.testimonials .fa-chevron-right
+{
+    right: 0;
+}
+
+/**end testimonials**/
+
+/**start journal**/
+.journal
+{
+    margin-top: 130px;
+}
+.journal .big
+{
+    flex: 66.6666%;
+    max-width: 66.6666%;
+    border-left: .5px solid #222;
+    border-right: .5px solid #222;
+    padding: 0 15px;
+}
+.journal .big .big-1
+{
+    flex: 50%;
+    max-width: 50%;
+    border-right: .5px solid #222;
+    padding-right: 10px
+}
+.journal .big .big-2
+{
+    flex: 50%;
+    max-width: 50%;
+    padding-left: 10px;
+}
+.journal .small
+{
+    flex: 33.3333%;
+    border-right: .5px solid #222;
+    padding: 0 15px;
+}
+.journal .row img 
+{
+    width: 100%;
+    height: 330px;
+    margin-bottom: 25px;
+}
+.journal .images-over .overlay 
+{
+    opacity: 0;
+  
+}
+.journal .images-over .overlay:hover 
+{
+    opacity: 1;
+}
+
+/**end journal**/
+
+/**start contact**/
+.contact
+{
+    margin-top: 130px;
+}
+.contact .big
+{
+    flex: 66.6666%;
+    max-width: 66.6666%;
+    border-right: .5px solid #222;
+    border-left:  .5px solid #222;
+    padding: 0 15px;
+    margin-bottom: 60px;
+}
+.contact .info
+{
+    flex: 33.3333%;
+    max-width: 33.3333%;
+    border-right: .5px solid #222;
+    padding: 0 15px;
+}
+.contact .big input
+{
+    background: none;
+    border: none;
+    border-bottom: 1px solid #666;
+    padding: 15px 0;
+    width: 45%;
+    margin-bottom: 30px;
+    outline: none;         /**ميظهرش صندوق input عشان لما احط المؤشر ع ال **/
+}
+.contact .big input:first-of-type
+{
+    margin-right: 20px;
+}
+.contact .big textarea
+{
+    background: none;
+    border: none;
+    width: 100%;
+    height: 200px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #666;
+    padding: 0 15px;
+    margin-bottom: 30px;
+    outline: none;        /**ميظهرش صندوق input عشان لما احط المؤشر ع ال **/
+    font-weight: 800;
+}
+.contact .info
+{
+    color: #fff;
+}
+.contact .info .text
+{
+    margin-bottom: 32px;
+    padding: 15px 0;
+}
+.contact .info span
+{
+    display: block;     /**عشان ياجو تحت بعض**/
+}
+.contact .info span:first-of-type
+{
+    color: #888;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 800;
+}
+.contact .info span:last-of-type
+{
+    font-size: 21px;
+    letter-spacing: 1px;   /**المسافه بين الحروف**/
+    margin-top: 12px;
+}
+
+
+/**end contact**/
+
+/**start footer**/
+.fixed
+{
+    position: fixed;      /**هاد خاص باخر سكشن **/
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+footer
+{
+    margin-top: 50px;     /**هاد عشان سكشن الفوتر ينزل كله عن الي فوقيه **/
+    background-color: #191919;
+    height: 400px;
+    text-align: center ;
+    padding-top: 50px;    /**هاد للكلام من جوا **/
+}
+footer .sochial
+{
+    margin-bottom: 47px;
+}
+footer .sochial span
+{
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 800;
+    color: #999;
+}
+footer p
+{
+    color: #999;
+}
+footer p span
+{
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+/**end footer**/
+/**start framework**/
+.main-span
+{
+    color: #D63447;
+}
+.overlay               /**  كلاس اوفر لاي html هاد الكود للهيدر بكون من فوق اسود ومن تحت شفاف بس لازم اكون عامل  **/ 
+/**هاد الكود لكل الاوفر لاي الموجودة عندي **/
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);  
+    transition: .3s ;    
+}
+.images-over   
+{
+    position: relative;
+}
+.images-over .info
+{
+    position: absolute;
+    bottom: 50px;
+    left: 12px;    
+}
+.images-over .info p
+{
+    font-size: 18px;
+    margin: 5px;
+    color: #fff;
+}
+.images-over .info span
+{
+    color: #999;
+    padding: 5px;
+}
+.heading
+{
+    text-align: center;
+    margin-bottom: 50px;    
+}
+.heading h2
+{
+    font-size: 32px;
+    text-transform: capitalize;
+    color: #fff;
+    margin: 15px;
+}
+.heading img
+{
+    width: 90px;      /**قلننا غرض الصورة عشان تصغر **/
+}
+.main-button
+{
+    background: none;
+    color: #FFF;
+    border: 1px solid #222;
+    border-radius: 50px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+    margin: 0 12px;
+}
+.main-button:hover
+{
+    transform: scale(1.05);     /** 1pxعشان لما احط المؤشر ع الزر يطلع لفوق بمقدار **/
+    color: #D63447;
+    border: 1px solid #D63447;    
+}
+
+/**طريقه انك انك اثبت اخر كلاس تحت الصفحه **/
+/**اول اشي بدي اعمل كلاس خاص بالصفحه الي بدي اثبتها .... تاني اشي دعمل كلاس بكل الصفحه م عدا اخر كلاس ... تالت اشي بعطي خلفيه سودا للكلاس تع الصفحات  كلهم وبعطيه طول الصفحه الي بدي ثبتها **/
+
+/**end framwork**/
